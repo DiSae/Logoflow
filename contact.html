@@ -14,13 +14,13 @@
   <meta name="twitter:title" content="Contact | Logoflow Logopedie – logopedie in Haaltert">
   <meta name="twitter:description" content="Contactgegevens van Logoflow Logopedie in Haaltert. Maak eenvoudig een afspraak via telefoon, e-mail of het contactformulier.">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="images/logo.png" type="image/svg+xml">
 </head>
 <body>
 
   <header class="header">
     <div class="container header-inner">
-      <a href="index.html" class="logo"><img src="images/logo.svg" alt="Logoflow" class="logo-icon"><div class="logo-text"><span class="brand">LOGOFLOW</span><span class="tagline">LOGOPEDIE</span></div></a>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Logoflow" class="logo-icon"><div class="logo-text"><span class="brand">LOGOFLOW</span><span class="tagline">LOGOPEDIE</span></div></a>
       <nav class="nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown"><button type="button" class="nav-dropdown-toggle" data-redirect="aanbod.html#top">Aanbod <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="nav-dropdown-menu"><a href="aanbod.html#top">Aanbod</a><a href="aanbod.html#spraakklanken">Spraakklanken</a><a href="aanbod.html#taalontwikkeling">Taalontwikkeling</a><a href="aanbod.html#auditief">Auditieve vaardigheden</a><a href="aanbod.html#lezen">Lees- en spellingproblemen</a><a href="aanbod.html#preverbaal">Preverbale logopedie</a><a href="aanbod.html#aanpak">Mijn aanpak</a></div></div>
@@ -34,7 +34,7 @@
   </header>
 
   <div class="mobile-nav">
-    <div class="mobile-nav-header"><a href="index.html" class="logo"><img src="images/logo.svg" alt="Logoflow" class="logo-icon"><div class="logo-text"><span class="brand">LOGOFLOW</span></div></a><button class="mobile-nav-close menu-toggle" aria-label="Menu sluiten"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>
+    <div class="mobile-nav-header"><a href="index.html" class="logo"><img src="images/logo.png" alt="Logoflow" class="logo-icon"><div class="logo-text"><span class="brand">LOGOFLOW</span></div></a><button class="mobile-nav-close menu-toggle" aria-label="Menu sluiten"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>
     <nav class="mobile-nav-links"><a href="index.html">Home</a><a href="aanbod.html">Aanbod</a><a href="over-mij.html">Over mij</a><a href="praktisch.html">Praktisch</a><a href="contact.html">Contact</a></nav>
     <a href="contact.html" class="btn btn-primary mobile-nav-cta">Maak een afspraak →</a>
   </div>
@@ -67,33 +67,38 @@
     <div class="container contact-grid">
       <div>
         <h2 style="margin-bottom: 24px;">Stuur een bericht</h2>
-        <form id="contact-form">
+        <form id="contact-form" novalidate>
           <div class="form-group">
             <label for="name">Naam *</label>
-            <input type="text" id="name" name="name" required placeholder="Uw naam">
+            <input type="text" id="name" name="name" required maxlength="80" placeholder="Uw naam">
           </div>
           <div class="form-group">
             <label for="email">E-mail *</label>
-            <input type="email" id="email" name="email" required placeholder="uw@email.be">
+            <input type="email" id="email" name="email" required maxlength="120" placeholder="uw@email.be" autocomplete="email">
           </div>
           <div class="form-group">
             <label for="phone">Telefoon</label>
-            <input type="tel" id="phone" name="phone" placeholder="+32 ...">
+            <input type="tel" id="phone" name="phone" maxlength="20" placeholder="+32 ..." autocomplete="tel">
           </div>
           <div class="form-group">
             <label for="subject">Onderwerp</label>
-            <input type="text" id="subject" name="subject" placeholder="Bijv. Afspraak maken">
+            <input type="text" id="subject" name="subject" maxlength="120" placeholder="Bijv. Afspraak maken">
           </div>
           <div class="form-group">
             <label for="message">Bericht *</label>
-            <textarea id="message" name="message" required placeholder="Uw bericht..."></textarea>
+            <textarea id="message" name="message" required maxlength="2000" placeholder="Uw bericht..."></textarea>
+          </div>
+          <div class="form-group" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
           </div>
           <div class="form-group">
             <label class="form-checkbox">
-              <input type="checkbox" required>
+              <input type="checkbox" id="consent" name="consent" required>
               Ik ga akkoord met het privacybeleid en geef toestemming om mijn gegevens te verwerken.
             </label>
           </div>
+          <p id="form-feedback" class="form-feedback" role="status" aria-live="polite" style="margin: 0 0 16px; font-size: 0.95rem; color: var(--navy);"></p>
           <button type="submit" class="btn btn-primary">Verstuur bericht →</button>
         </form>
       </div>
@@ -101,7 +106,7 @@
         <h2 style="margin-bottom: 24px;">Contactgegevens</h2>
         <div class="contact-info-item">
           <div class="contact-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg></div>
-          <div><h4>Adres</h4><p>Ekentstraat 12<br>9450 Haaltert</p></div>
+          <div><h4>Adres</h4><p>Logoflow Logopedie<br>Ekentstraat 12<br>9450 Haaltert</p></div>
         </div>
         <div class="contact-info-item">
           <div class="contact-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/></svg></div>
@@ -134,7 +139,7 @@
     <div class="container two-col">
       <div>
         <div class="map-placeholder" style="height: 350px;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.5!2d3.99!3d50.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDUzJzI0LjAiTiAzwrA1OSczNi4wIkU!5e0!3m2!1snl!2sbe!4v1" width="100%" height="350" style="border:0; border-radius: var(--radius-lg);" allowfullscreen="" loading="lazy" title="Kaart Logoflow"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.5106578263747!2d3.9938442!3d50.8996537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3a321b4fb1903%3A0xb575ddebdb779d79!2sEkentstraat%2012%2C%209450%20Haaltert!5e0!3m2!1snl!2sbe!4v1710000000000" width="100%" height="350" style="border:0; border-radius: var(--radius-lg);" allowfullscreen="" loading="lazy" title="Kaart Logoflow"></iframe>
         </div>
         <div style="background: var(--white); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-sm); margin-top: -40px; margin-left: 20px; margin-right: 20px; position: relative; z-index: 1;">
           <h4 style="font-family: var(--font-sans); font-size: 1rem; margin-bottom: 8px;">Goed bereikbaar</h4>
@@ -144,7 +149,7 @@
       <div>
         <h2>Twijfel je of ik kan helpen?</h2>
         <p style="margin: 16px 0;">Neem gerust contact op, ook als je niet zeker bent of logopedie de juiste stap is. Samen bekijken we de mogelijkheden en bespreken we wat ik voor jouw kind kan betekenen.</p>
-        <p style="margin-bottom: 24px;">Een kennismakingsgesprek is altijd vrijblijvend.</p>
+        <p style="margin-bottom: 24px;">Een kennismakingsgesprek is altijd vrijblijvend, maar niet gratis.</p>
         <span class="signature">Sara ♡</span>
         <div class="rounded-image" style="margin-top: 24px;">
           <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" alt="Sara Heiremans">
@@ -163,7 +168,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a href="index.html" class="logo"><img src="images/logo.svg" alt="Logoflow" class="logo-icon"><div class="logo-text"><span class="brand">LOGOFLOW</span><span class="tagline">LOGOPEDIE</span></div></a><p class="footer-tagline">Logopedie met aandacht, vertrouwen en groei.</p></div>
+      <div><a href="index.html" class="logo"><img src="images/logo.png" alt="Logoflow" class="logo-icon"><div class="logo-text"><span class="brand">LOGOFLOW</span><span class="tagline">LOGOPEDIE</span></div></a><p class="footer-tagline">Logopedie met aandacht, vertrouwen en groei.</p></div>
       <div><h4>Locatie</h4><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>Ekentstraat 12<br>9450 Haaltert</div></div>
       <div><h4>Contact</h4><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/></svg><a href="tel:+32465024942">+32 465 02 49 42</a></div><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="1.5"/></svg><a href="mailto:sara.heiremans@logoflow.be">sara.heiremans@logoflow.be</a></div></div>
       <div><h4>Volg me</h4><div class="social-links"><a href="https://instagram.com/logoflow.logopedie" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/></svg></a><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" stroke="currentColor" stroke-width="1.5"/></svg></a></div></div>

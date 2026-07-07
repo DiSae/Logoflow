@@ -68,7 +68,7 @@ Value: 185.199.108.153  (GitHub Pages IP)
 ## Before going live — checklist
 
 - [ ] Replace placeholder photos in `images/` with real photos of Sara and the practice
-- [ ] Add the official Logoflow logo (replace `images/logo.svg`)
+- [ ] Add the official Logoflow logo (replace `images/logo.png`)
 - [ ] Update Facebook page URL (currently placeholder)
 - [ ] Add Privacy Policy and Terms pages (footer links)
 - [ ] Set up contact form backend (see below)
