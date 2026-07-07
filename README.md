@@ -72,7 +72,7 @@ Value: 185.199.108.153  (GitHub Pages IP)
 - [ ] Update Facebook page URL (currently placeholder)
 - [ ] Add Privacy Policy and Terms pages (footer links)
 - [ ] Set up contact form backend (see below)
-- [ ] Verify address: Eekentstraat 12, 9450 Haaltert
+- [ ] Verify address: Ekentstraat 12, 9450 Haaltert
 - [ ] Update copyright year
 
 ## Contact form
