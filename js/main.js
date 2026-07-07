@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.current-year').forEach((yearEl) => {
+    yearEl.textContent = new Date().getFullYear();
+  });
+
+  document.querySelectorAll('.nav-dropdown-toggle').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const redirect = button.getAttribute('data-redirect');
+      if (redirect) {
+        event.preventDefault();
+        window.location.href = redirect;
+      }
+    });
+  });
+
   // Mobile menu
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
