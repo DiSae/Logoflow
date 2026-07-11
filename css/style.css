@@ -161,6 +161,10 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
   gap: 24px;
 }
 
+section[id] {
+  scroll-margin-top: var(--header-height);
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -383,19 +387,28 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
   margin: 32px 0;
 }
 
-.welcome-quote .quote-mark {
-  font-family: var(--font-serif);
-  font-size: 4rem;
-  color: var(--coral);
-  line-height: 0.5;
-  margin-bottom: 16px;
-}
-
 .welcome-quote p {
   font-family: var(--font-serif);
   font-size: 1.125rem;
   font-style: italic;
   color: var(--navy);
+}
+
+.welcome-quote p::before,
+.welcome-quote p::after {
+  color: var(--coral);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.welcome-quote p::before {
+  content: "“";
+  margin-right: 2px;
+}
+
+.welcome-quote p::after {
+  content: "”";
+  margin-left: 2px;
 }
 
 .rounded-image img {
@@ -718,6 +731,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
   align-items: center;
   padding: 48px 0;
   border-bottom: 1px solid var(--gray-200);
+  scroll-margin-top: var(--header-height);
 }
 
 .service-detail:last-child { border-bottom: none; }
@@ -1054,20 +1068,29 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
   position: relative;
 }
 
-.quote-box .quote-mark {
-  font-family: var(--font-serif);
-  font-size: 4rem;
-  color: var(--coral);
-  line-height: 0.5;
-  margin-bottom: 20px;
-}
-
 .quote-box blockquote {
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-style: italic;
   color: var(--navy);
   line-height: 1.5;
+}
+
+.quote-box blockquote::before,
+.quote-box blockquote::after {
+  color: var(--coral);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quote-box blockquote::before {
+  content: "“";
+  margin-right: 2px;
+}
+
+.quote-box blockquote::after {
+  content: "”";
+  margin-left: 2px;
 }
 
 .why-grid {
