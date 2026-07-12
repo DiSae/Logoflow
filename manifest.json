@@ -1,0 +1,19 @@
+{
+  "name": "Logoflow Logopedie",
+  "short_name": "Logoflow",
+  "description": "Logopedie in Haaltert, Erpe-Mere, Ninove, Denderleeuw en Aalst voor kinderen en jongeren.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "nl-BE",
+  "background_color": "#FAF8F6",
+  "theme_color": "#F06A6A",
+  "icons": [
+    {
+      "src": "images/logo-transparant.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

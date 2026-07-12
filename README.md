@@ -62,6 +62,7 @@ Value: 185.199.108.153  (GitHub Pages IP)
 - Every page has a `<link rel="canonical">`, full Open Graph + Twitter Card tags (with absolute image URLs), and `og:locale`/`og:site_name`.
 - Structured data (JSON-LD): `MedicalBusiness` on the homepage (address, geo, sameAs, employee), `FAQPage` on `praktisch.html`, and `BreadcrumbList` on every subpage.
 - Google Fonts are loaded via `<link rel="preconnect">` + `<link rel="stylesheet">` (not a render-blocking CSS `@import`) for faster First Contentful Paint.
+- Every page links `manifest.json` and an `apple-touch-icon`, with a `theme-color` meta tag, for a better mobile/home-screen experience.
 
 ## Before going live — checklist
 
@@ -72,15 +73,13 @@ Value: 185.199.108.153  (GitHub Pages IP)
 - [x] Verify address: Ekentstraat 12, 9450 Haaltert
 - [x] Update copyright year
 - [x] Submit sitemap to Google Search Console
-- [ ] Set up contact form backend (see below)
+- [x] Set up contact form backend (Web3Forms, see below)
+- [x] Add apple-touch-icon and web app manifest for mobile/PWA
 
 ## Contact form
 
-The form currently opens the user's email client (`mailto:`). For a proper form that sends emails without exposing an address, use one of these free services:
+The form submits via **[Web3Forms](https://web3forms.com)** (see `js/main.js`) — no server/backend needed. It includes client-side validation, a honeypot field and basic content filtering against spam.
 
-- [Formspree](https://formspree.io) — add `action="https://formspree.io/f/YOUR_ID"` to the form
-- [Web3Forms](https://web3forms.com) — free, no backend needed
-- [Netlify Forms](https://docs.netlify.com/forms/setup/) — if hosting on Netlify
 
 ## Cost comparison
 
@@ -103,6 +102,7 @@ Logoflow/
 ├── algemene-voorwaarden.html
 ├── robots.txt
 ├── sitemap.xml
+├── manifest.json
 ├── CNAME
 ├── css/
 │   └── style.css
