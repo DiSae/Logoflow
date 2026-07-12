@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /privacybeleid.html
+Disallow: /algemene-voorwaarden.html
+
+Sitemap: https://logoflow.be/sitemap.xml
