@@ -10,9 +10,12 @@ Built as a static HTML/CSS/JS site — no build step, no monthly hosting fees.
 |------|------|-------------|
 | Home | `index.html` | Hero, welcome, services overview, about Sara, testimonials |
 | Aanbod | `aanbod.html` | All speech therapy services in detail |
+| Trajecten | `trajecten.html` | Individual and group treatment tracks |
 | Over mij | `over-mij.html` | About Sara, approach, experience stats |
-| Praktisch | `praktisch.html` | Location, process, rates, FAQ |
-| Contact | `contact.html` | Contact form, details, map |
+| Praktisch | `praktisch.html` | Location, process, rates, FAQ (with FAQ rich results) |
+| Contact | `contact.html` | Contact form, details, map, online booking via [Rosa](https://www.rosa.be) |
+| Privacybeleid | `privacybeleid.html` | Privacy policy (noindex) |
+| Algemene voorwaarden | `algemene-voorwaarden.html` | Terms & conditions (noindex) |
 
 ## Design
 
@@ -33,24 +36,11 @@ python -m http.server 8080
 
 Then visit http://localhost:8080
 
-## Deploy (free options)
+## Deploy
 
-### Option 1: GitHub Pages (recommended)
+The site is **live** at [logoflow.be](https://logoflow.be/), hosted on **GitHub Pages** with a custom domain (see `CNAME`). DNS for `logoflow.be` is managed via Wix, pointed to GitHub Pages.
 
-1. Push this repo to GitHub (`DiSae/Logoflow`)
-2. Go to **Settings → Pages → Source**: deploy from `main` branch, root folder
-3. Site will be live at `https://disae.github.io/Logoflow/`
-4. Point `logoflow.be` DNS to GitHub Pages (add CNAME file with `logoflow.be`)
-
-### Option 2: Cloudflare Pages
-
-1. Connect the GitHub repo at [pages.cloudflare.com](https://pages.cloudflare.com)
-2. No build command needed — deploy static files directly
-3. Free SSL + CDN included
-
-### Option 3: Netlify
-
-Drag and drop the `Logoflow` folder at [app.netlify.com/drop](https://app.netlify.com/drop)
+Any push to the `main` branch is automatically published — no build step required.
 
 ## Connect logoflow.be domain
 
@@ -65,15 +55,24 @@ Type: A (for apex/root domain)
 Value: 185.199.108.153  (GitHub Pages IP)
 ```
 
+## SEO
+
+- `robots.txt` allows all crawlers and points to `sitemap.xml`; the two legal pages are disallowed.
+- `sitemap.xml` lists all indexable pages with `lastmod`/`priority`, submitted to Google Search Console (domain property `logoflow.be`, verified via DNS TXT record).
+- Every page has a `<link rel="canonical">`, full Open Graph + Twitter Card tags (with absolute image URLs), and `og:locale`/`og:site_name`.
+- Structured data (JSON-LD): `MedicalBusiness` on the homepage (address, geo, sameAs, employee), `FAQPage` on `praktisch.html`, and `BreadcrumbList` on every subpage.
+- Google Fonts are loaded via `<link rel="preconnect">` + `<link rel="stylesheet">` (not a render-blocking CSS `@import`) for faster First Contentful Paint.
+
 ## Before going live — checklist
 
-- [ ] Replace placeholder photos in `images/` with real photos of Sara and the practice
-- [ ] Add the official Logoflow logo (replace `images/logo.png`)
-- [ ] Update Facebook page URL (currently placeholder)
-- [ ] Add Privacy Policy and Terms pages (footer links)
+- [x] Replace placeholder photos in `images/` with real photos of Sara and the practice
+- [x] Add the official Logoflow logo
+- [x] Update Facebook/Instagram page URL
+- [x] Add Privacy Policy and Terms pages (footer links)
+- [x] Verify address: Ekentstraat 12, 9450 Haaltert
+- [x] Update copyright year
+- [x] Submit sitemap to Google Search Console
 - [ ] Set up contact form backend (see below)
-- [ ] Verify address: Ekentstraat 12, 9450 Haaltert
-- [ ] Update copyright year
 
 ## Contact form
 
@@ -96,15 +95,20 @@ The form currently opens the user's email client (`mailto:`). For a proper form 
 Logoflow/
 ├── index.html
 ├── aanbod.html
+├── trajecten.html
 ├── over-mij.html
 ├── praktisch.html
 ├── contact.html
+├── privacybeleid.html
+├── algemene-voorwaarden.html
+├── robots.txt
+├── sitemap.xml
+├── CNAME
 ├── css/
 │   └── style.css
 ├── js/
 │   └── main.js
 └── images/
-    └── logo.svg
 ```
 
 ## License
