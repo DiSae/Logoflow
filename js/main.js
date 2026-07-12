@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Contact form
+  const WEB3FORMS_ACCESS_KEY = 'bc93c48b-d814-4364-b33b-98ad2b9b89e9';
   const form = document.querySelector('#contact-form');
   if (form) {
     const feedback = document.getElementById('form-feedback');
@@ -99,16 +100,38 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const body = [
-        `Naam: ${name}`,
-        `E-mail: ${email}`,
-        phone ? `Telefoon: ${phone}` : '',
-        '',
-        message,
-      ].filter(Boolean).join('\n');
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
+      setFeedback('Bericht wordt verzonden…');
 
-      setFeedback('Uw e-mailprogramma wordt geopend…');
-      window.location.href = `mailto:sara.heiremans@logoflow.be?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Contactformulier: ${subject}`,
+          from_name: name,
+          name,
+          email,
+          phone: phone || 'Niet opgegeven',
+          message,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.success) {
+            setFeedback('Bedankt! Uw bericht is verzonden. Ik neem snel contact met u op.');
+            form.reset();
+          } else {
+            setFeedback('Er ging iets mis bij het verzenden. Probeer het later opnieuw of mail naar sara.heiremans@logoflow.be.', true);
+          }
+        })
+        .catch(() => {
+          setFeedback('Er ging iets mis bij het verzenden. Probeer het later opnieuw of mail naar sara.heiremans@logoflow.be.', true);
+        })
+        .finally(() => {
+          if (submitButton) submitButton.disabled = false;
+        });
     });
   }
 });
