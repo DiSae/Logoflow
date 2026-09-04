@@ -48,8 +48,30 @@ document.addEventListener('DOMContentLoaded', () => {
       feedback.style.color = isError ? '#b42318' : 'var(--navy)';
     };
 
+    const clearInvalidState = () => {
+      form.querySelectorAll('[aria-invalid="true"]').forEach((field) => {
+        field.removeAttribute('aria-invalid');
+      });
+    };
+
+    const showFieldError = (selector, message) => {
+      const field = form.querySelector(selector);
+      clearInvalidState();
+      field?.setAttribute('aria-invalid', 'true');
+      setFeedback(message, true);
+      field?.focus();
+    };
+
+    form.addEventListener('input', (event) => {
+      if (event.target.getAttribute?.('aria-invalid') === 'true') {
+        event.target.removeAttribute('aria-invalid');
+        setFeedback('');
+      }
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      clearInvalidState();
 
       const data = new FormData(form);
       const name = (data.get('name') || '').toString().trim();
@@ -66,37 +88,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!name || name.length < 2) {
-        setFeedback('Vul uw naam in.', true);
-        form.querySelector('#name')?.focus();
+        showFieldError('#name', 'Vul uw naam in.');
         return;
       }
 
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
-        setFeedback('Vul een geldig e-mailadres in.', true);
-        form.querySelector('#email')?.focus();
+        showFieldError('#email', 'Vul een geldig e-mailadres in.');
         return;
       }
 
       if (phone && !/^\+?[0-9\s\-/()]{6,20}$/.test(phone)) {
-        setFeedback('Controleer het telefoonnummer.', true);
-        form.querySelector('#phone')?.focus();
+        showFieldError('#phone', 'Controleer het telefoonnummer.');
         return;
       }
 
       if (!consent) {
-        setFeedback('Accepteer het privacybeleid om te verzenden.', true);
+        showFieldError('#consent', 'Accepteer het privacybeleid om te verzenden.');
         return;
       }
 
       if (message.length < 10 || message.length > 2000) {
-        setFeedback('Het bericht moet tussen 10 en 2000 tekens zijn.', true);
-        form.querySelector('#message')?.focus();
+        showFieldError('#message', 'Het bericht moet tussen 10 en 2000 tekens zijn.');
         return;
       }
 
       if (/(https?:\/\/|www\.)/i.test(message) || /\b(viagra|casino|crypto|free money|buy now)\b/i.test(message)) {
-        setFeedback('Bericht bevat niet-toegestane inhoud.', true);
-        form.querySelector('#message')?.focus();
+        showFieldError('#message', 'Bericht bevat niet-toegestane inhoud.');
         return;
       }
 

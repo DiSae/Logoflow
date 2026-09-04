@@ -977,6 +977,12 @@ section[id] {
 
 .form-group textarea { min-height: 140px; resize: vertical; }
 
+.form-help {
+  margin-top: 6px;
+  color: var(--gray-600);
+  font-size: 0.8125rem;
+}
+
 .form-checkbox {
   display: flex;
   align-items: flex-start;
@@ -986,6 +992,11 @@ section[id] {
 }
 
 .form-checkbox input { margin-top: 4px; }
+
+.form-checkbox a {
+  color: var(--coral-dark);
+  text-decoration: underline;
+}
 
 .contact-info-item {
   display: flex;

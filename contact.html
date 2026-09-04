@@ -114,15 +114,15 @@
         <form id="contact-form" novalidate>
           <div class="form-group">
             <label for="name">Naam *</label>
-            <input type="text" id="name" name="name" required maxlength="80" placeholder="Uw naam">
+            <input type="text" id="name" name="name" required maxlength="80" placeholder="Uw naam" autocomplete="name" aria-describedby="form-feedback">
           </div>
           <div class="form-group">
             <label for="email">E-mail *</label>
-            <input type="email" id="email" name="email" required maxlength="120" placeholder="uw@email.be" autocomplete="email">
+            <input type="email" id="email" name="email" required maxlength="120" placeholder="uw@email.be" autocomplete="email" aria-describedby="form-feedback">
           </div>
           <div class="form-group">
             <label for="phone">Telefoon</label>
-            <input type="tel" id="phone" name="phone" maxlength="20" placeholder="+32 ..." autocomplete="tel">
+            <input type="tel" id="phone" name="phone" maxlength="20" placeholder="+32 ..." autocomplete="tel" aria-describedby="form-feedback">
           </div>
           <div class="form-group">
             <label for="subject">Onderwerp</label>
@@ -130,7 +130,8 @@
           </div>
           <div class="form-group">
             <label for="message">Bericht *</label>
-            <textarea id="message" name="message" required maxlength="2000" placeholder="Uw bericht..."></textarea>
+            <textarea id="message" name="message" required maxlength="2000" placeholder="Uw bericht..." aria-describedby="message-help form-feedback"></textarea>
+            <p class="form-help" id="message-help">Vermeld hier geen medische of gevoelige informatie.</p>
           </div>
           <div class="form-group" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
             <label for="website">Website</label>
@@ -138,8 +139,8 @@
           </div>
           <div class="form-group">
             <label class="form-checkbox">
-              <input type="checkbox" id="consent" name="consent" required>
-              Ik ga akkoord met het privacybeleid en geef toestemming om mijn gegevens te verwerken.
+              <input type="checkbox" id="consent" name="consent" required aria-describedby="form-feedback">
+              <span>Ik ga akkoord met het <a href="privacybeleid.html" target="_blank" rel="noopener">privacybeleid</a> en geef toestemming om mijn gegevens te verwerken.</span>
             </label>
           </div>
           <p id="form-feedback" class="form-feedback" role="status" aria-live="polite" style="margin: 0 0 16px; font-size: 0.95rem; color: var(--navy);"></p>
