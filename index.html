@@ -11,43 +11,55 @@
   <meta property="og:description" content="Logopedie in Haaltert, Erpe-Mere en Aalst voor kinderen en jongeren. Helder, warm en resultaatgericht: spraak, taal, lezen, auditieve vaardigheden en preverbale begeleiding.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://logoflow.be/">
-  <meta property="og:image" content="https://logoflow.be/images/hero-image.jpg">
+  <meta property="og:image" content="https://logoflow.be/images/Logoflow-28.jpg">
   <meta property="og:locale" content="nl_BE">
   <meta property="og:site_name" content="Logoflow Logopedie">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Logoflow Logopedie | Logopedist in Haaltert, Erpe-Mere en Aalst">
   <meta name="twitter:description" content="Logopedie in Haaltert, Erpe-Mere en Aalst voor kinderen en jongeren. Helder, warm en resultaatgericht: spraak, taal, lezen, auditieve vaardigheden en preverbale begeleiding.">
-  <meta name="twitter:image" content="https://logoflow.be/images/hero-image.jpg">
+  <meta name="twitter:image" content="https://logoflow.be/images/Logoflow-28.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Logoflow Logopedie",
-    "description": "Logopedie in Haaltert, Erpe-Mere, Ninove, Denderleeuw en Aalst met persoonlijke begeleiding voor kinderen en jongeren.",
-    "url": "https://logoflow.be/",
-    "telephone": "+32465024942",
-    "email": "sara.heiremans@logoflow.be",
-    "image": "https://logoflow.be/images/hero-image.jpg",
-    "priceRange": "€€",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Ekentstraat 12",
-      "addressLocality": "Haaltert",
-      "postalCode": "9450",
-      "addressCountry": "BE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 50.8996537,
-      "longitude": 3.9938442
-    },
-    "areaServed": ["Haaltert", "Erpe-Mere", "Ninove", "Denderleeuw", "Aalst"],
-    "sameAs": ["https://www.instagram.com/logoflow.sara"],
-    "employee": {
-      "@type": "Person",
-      "name": "Sara Heiremans",
-      "jobTitle": "Logopedist"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://logoflow.be/#website",
+        "url": "https://logoflow.be/",
+        "name": "Logoflow Logopedie",
+        "inLanguage": "nl-BE",
+        "publisher": {"@id": "https://logoflow.be/#organization"}
+      },
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://logoflow.be/#organization",
+        "name": "Logoflow Logopedie",
+        "description": "Logopedie in Haaltert, Erpe-Mere, Ninove, Denderleeuw en Aalst met persoonlijke begeleiding voor kinderen en jongeren.",
+        "url": "https://logoflow.be/",
+        "telephone": "+32465024942",
+        "email": "sara.heiremans@logoflow.be",
+        "image": "https://logoflow.be/images/Logoflow-28.jpg",
+        "logo": "https://logoflow.be/images/logo-transparant.png",
+        "priceRange": "€€",
+        "address": {"@type": "PostalAddress", "streetAddress": "Ekentstraat 12", "addressLocality": "Haaltert", "postalCode": "9450", "addressCountry": "BE"},
+        "geo": {"@type": "GeoCoordinates", "latitude": 50.8996537, "longitude": 3.9938442},
+        "areaServed": ["Haaltert", "Erpe-Mere", "Ninove", "Denderleeuw", "Aalst"],
+        "sameAs": ["https://www.instagram.com/logoflow.sara"],
+        "founder": {"@id": "https://logoflow.be/#sara-heiremans"},
+        "employee": {"@id": "https://logoflow.be/#sara-heiremans"}
+      },
+      {
+        "@type": "Person",
+        "@id": "https://logoflow.be/#sara-heiremans",
+        "name": "Sara Heiremans",
+        "url": "https://logoflow.be/over-mij.html",
+        "image": "https://logoflow.be/images/Sara.jpeg",
+        "jobTitle": "Logopedist",
+        "description": "Logopedist sinds 2023 en afgestudeerd als leerkracht lager onderwijs in 2014, met meer dan 10 jaar ervaring in onderwijs en begeleiding.",
+        "worksFor": {"@id": "https://logoflow.be/#organization"},
+        "sameAs": ["https://www.instagram.com/logoflow.sara"]
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,6 +106,7 @@
         </div>
         <a href="over-mij.html">Over mij</a>
         <a href="praktisch.html">Praktisch</a>
+        <a href="kennisbank.html">Kennisbank</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="contact.html" class="btn btn-primary header-cta">Maak een afspraak →</a>
@@ -120,6 +133,7 @@
       <a href="trajecten.html">Trajecten</a>
       <a href="over-mij.html">Over mij</a>
       <a href="praktisch.html">Praktisch</a>
+      <a href="kennisbank.html">Kennisbank</a>
       <a href="contact.html">Contact</a>
     </nav>
     <a href="contact.html" class="btn btn-primary mobile-nav-cta">Maak een afspraak →</a>
@@ -151,7 +165,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="images/hero-image.jpg" alt="Meisje van ongeveer 7 jaar dat vrolijk leert">
+        <img src="images/Logoflow-28.jpg" alt="Kind dat samen met de logopediste speels aan het werk is">
       </div>
     </div>
     <div class="hero-wave">
@@ -173,7 +187,32 @@
         </div>
       </div>
       <div class="rounded-image">
-        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80" alt="Praktijkruimte Logoflow">
+        <img src="images/Logoflow-85.jpg" alt="Praktijkruimte van Logoflow">
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice gallery -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Een kijkje in de praktijk</span>
+        <h2>Warm, rustig en speels</h2>
+        <span class="heart">♡</span>
+      </div>
+      <div class="practice-gallery">
+        <figure class="practice-gallery-main">
+          <img src="images/Logoflow-86.jpg" alt="Ruime en rustige therapieruimte van Logoflow">
+        </figure>
+        <figure>
+          <img src="images/Logoflow-107.jpg" alt="Schriftelijke oefening tijdens een sessie">
+        </figure>
+        <figure>
+          <img src="images/Logoflow-1.jpg" alt="Gezellig begeleidingsmoment">
+        </figure>
+        <figure>
+          <img src="images/Logoflow-114.jpg" alt="De ingang van Logoflow in Haaltert">
+        </figure>
       </div>
     </div>
   </section>

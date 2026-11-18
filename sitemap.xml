@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://logoflow.be/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -36,4 +36,20 @@
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
+  <url>
+    <loc>https://logoflow.be/kennisbank.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url><loc>https://logoflow.be/kennisbank/wanneer-heeft-een-kind-logopedie-nodig.html</loc><lastmod>2026-09-04</lastmod><changefreq>yearly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/voorschrift-logopedie-belgie.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/eerste-logopedisch-onderzoek.html</loc><lastmod>2026-09-04</lastmod><changefreq>yearly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/terugbetaling-logopedie-belgie.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/taalachterstand-of-tos.html</loc><lastmod>2026-09-04</lastmod><changefreq>yearly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/uitspraakprobleem-vanaf-welke-leeftijd.html</loc><lastmod>2026-09-04</lastmod><changefreq>yearly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/wat-doet-een-preverbaal-logopedist.html</loc><lastmod>2026-09-04</lastmod><changefreq>yearly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/individuele-logopedie-of-groepsbegeleiding.html</loc><lastmod>2026-09-04</lastmod><changefreq>yearly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/signalen-dyslexie-dyscalculie.html</loc><lastmod>2026-09-04</lastmod><changefreq>yearly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://logoflow.be/kennisbank/kosten-logopedie-belgie.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 </urlset>

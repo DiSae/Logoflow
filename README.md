@@ -6,16 +6,17 @@ Built as a static HTML/CSS/JS site — no build step, no monthly hosting fees.
 
 ## Pages
 
-| Page | File | Description |
-|------|------|-------------|
-| Home | `index.html` | Hero, welcome, services overview, about Sara, testimonials |
-| Aanbod | `aanbod.html` | All speech therapy services in detail |
-| Trajecten | `trajecten.html` | Individual and group treatment tracks |
-| Over mij | `over-mij.html` | About Sara, approach, experience stats |
-| Praktisch | `praktisch.html` | Location, process, rates, FAQ (with FAQ rich results) |
-| Contact | `contact.html` | Contact form, details, map, online booking via [Rosa](https://www.rosa.be) |
-| Privacybeleid | `privacybeleid.html` | Privacy policy (noindex) |
-| Algemene voorwaarden | `algemene-voorwaarden.html` | Terms & conditions (noindex) |
+| Page                 | File                                   | Description                                                                    |
+| -------------------- | -------------------------------------- | ------------------------------------------------------------------------------ |
+| Home                 | `index.html`                           | Hero, welcome, services overview, about Sara, testimonials                     |
+| Aanbod               | `aanbod.html`                          | All speech therapy services in detail                                          |
+| Trajecten            | `trajecten.html`                       | Individual and group treatment tracks                                          |
+| Over mij             | `over-mij.html`                        | About Sara, approach, experience stats                                         |
+| Praktisch            | `praktisch.html`                       | Location, process, rates, FAQ (with FAQ rich results)                          |
+| Contact              | `contact.html`                         | Contact form, details, map, online booking via [Rosa](https://www.rosa.be)     |
+| Kennisbank           | `kennisbank.html`, `kennisbank/*.html` | Ten source-backed answers for parents, with author and Article structured data |
+| Privacybeleid        | `privacybeleid.html`                   | Privacy policy (noindex)                                                       |
+| Algemene voorwaarden | `algemene-voorwaarden.html`            | Terms & conditions (noindex)                                                   |
 
 ## Design
 
@@ -58,9 +59,9 @@ Value: 185.199.108.153  (GitHub Pages IP)
 ## SEO
 
 - `robots.txt` allows all crawlers and points to `sitemap.xml`; the two legal pages are disallowed.
-- `sitemap.xml` lists all indexable pages with `lastmod`/`priority`, submitted to Google Search Console (domain property `logoflow.be`, verified via DNS TXT record).
+- `sitemap.xml` lists all indexable pages and knowledge articles with `lastmod`/`priority`, submitted to Google Search Console (domain property `logoflow.be`, verified via DNS TXT record).
 - Every page has a `<link rel="canonical">`, full Open Graph + Twitter Card tags (with absolute image URLs), and `og:locale`/`og:site_name`.
-- Structured data (JSON-LD): `MedicalBusiness` on the homepage (address, geo, sameAs, employee), `FAQPage` on `praktisch.html`, and `BreadcrumbList` on every subpage.
+- Structured data (JSON-LD): linked `MedicalBusiness`, `WebSite`, and `Person` entities, `FAQPage` on `praktisch.html`, and `Article` plus `BreadcrumbList` on knowledge pages.
 - Google Fonts are loaded via `<link rel="preconnect">` + `<link rel="stylesheet">` (not a render-blocking CSS `@import`) for faster First Contentful Paint.
 - Every page links `manifest.json` and an `apple-touch-icon`, with a `theme-color` meta tag, for a better mobile/home-screen experience.
 
@@ -80,13 +81,12 @@ Value: 185.199.108.153  (GitHub Pages IP)
 
 The form submits via **[Web3Forms](https://web3forms.com)** (see `js/main.js`) — no server/backend needed. It includes client-side validation, a honeypot field and basic content filtering against spam.
 
-
 ## Cost comparison
 
-| Current (Wix/similar) | This site |
-|----------------------|-----------|
-| ~€15–30/month | **€0/month** (GitHub Pages / Cloudflare) |
-| Domain only | ~€10/year for logoflow.be |
+| Current (Wix/similar) | This site                                |
+| --------------------- | ---------------------------------------- |
+| ~€15–30/month         | **€0/month** (GitHub Pages / Cloudflare) |
+| Domain only           | ~€10/year for logoflow.be                |
 
 ## File structure
 
@@ -100,6 +100,9 @@ Logoflow/
 ├── contact.html
 ├── privacybeleid.html
 ├── algemene-voorwaarden.html
+├── kennisbank.html
+├── kennisbank/
+│   └── *.html
 ├── robots.txt
 ├── sitemap.xml
 ├── manifest.json
